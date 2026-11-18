@@ -35,6 +35,12 @@ https://download.docker.com/linux/$ID ${UBUNTU_CODENAME:-$VERSION_CODENAME} stab
 
     sudo systemctl enable --now docker
 
+    if ! groups "$USER" | grep -qw docker; then
+        sudo usermod -aG docker "$USER"
+        echo "User '$USER' added to the 'docker' group."
+        echo "NOTE: Log out and back in for this change to take effect."
+    fi
+
     echo "Docker installed: $(docker --version)"
 }
 
@@ -98,3 +104,6 @@ install_python
 install_django
 
 echo "=== All tools are ready ==="
+echo ""
+echo "To activate the Django venv, run:"
+echo "  source ~/.local/share/devops-tools/venv/bin/activate"
