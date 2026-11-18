@@ -17,3 +17,4 @@ Each topic is organized into a separate Git branch.
 | Branch     | Topic                                                                                    |
 | ---------- | ---------------------------------------------------------------------------------------- |
 | `lesson-3` | Linux Administration — Bash script to install Docker, Docker Compose, Python, and Django |
+| `lesson-4` | Docker — Dockerized Django + PostgreSQL + Nginx with Docker Compose                      |
